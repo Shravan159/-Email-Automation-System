@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Enter Name" required>
+            <input type="email" id="regEmail" placeholder="Enter Email" required>
+            <input type="text" id="regPhone" placeholder="Enter Phone Number" required>
+            <select id="regCourse">
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+            </select>
+            <input type="password" id="regPassword" placeholder="Enter Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p id="registerMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
