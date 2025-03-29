@@ -12,7 +12,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     try {
         // Send data to backend
-        const response = await fetch("http://localhost:5000/api/register", {
+        const response = await fetch("https://email-automation-system-3nrf.onrender.com/api/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
