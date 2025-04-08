@@ -7,7 +7,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         email: document.getElementById("regEmail").value,
         phone: document.getElementById("regPhone").value,
         course: document.getElementById("regCourse").value,
-        password: document.getElementById("regPassword").value
+        emp_id: document.getElementById("regPassword").value
     };
 
     try {
