@@ -12,21 +12,18 @@ const emailTemplates = require("../utils/emails");
 // ✅ Register Student and Start Email Sequence
 router.post("/register", async (req, res) => {
     try {
-        const { username, email, phone, course, password } = req.body;
+        const { username, email, phone, course, emp_id } = req.body;
        const existingUser = await Student.findOne({ email });
         if (existingUser) {
            return res.status(400).json({ message: "Email already registered!" });
        }
-
-        // Hash password before saving
-        const hashedPassword = await bcrypt.hash(password, 10);
 
         const student = new Student({ 
             username, 
             email, 
             phone, 
             course, 
-            password: hashedPassword,
+            emp_id,
             emailSentDays: 0
         });
 
@@ -39,7 +36,7 @@ router.post("/register", async (req, res) => {
         // ✅ 2️⃣ Schedule the 10-minute email sequence
         scheduleEmails(email, username);
 
-        res.json({ message: "Registration successful! You will receive 10 emails in 10 minutes." });
+        res.json({ message: "Your Registration Successfull !!" });
 
     } catch (error) {
         res.status(500).json({ message: "Error registering student" });
